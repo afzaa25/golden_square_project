@@ -1,6 +1,7 @@
-from lib.estimate_reading_time import *
-
-
-def test_with_200_hundred_words():
-    result = estimate_reading_time("one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten one two three four five six seven eight nine ten")
-    assert result == 1.0
+def estimate_reading_time(text):
+    if text == '':
+        raise Exception("Can't estimate reading time for an empty text.")
+    else:
+        words = text.split()
+        word_count = len(words)
+        return word_count / 200
